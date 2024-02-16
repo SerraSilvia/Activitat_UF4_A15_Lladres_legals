@@ -6,15 +6,11 @@ abstract class CompteBancari {
     var dataObertura: Date = Date()
     var nomCompte: String= ""
     var saldo:Double= 0.0
-    var esCompteNou: Boolean = false
-    var comissioManteniment: Double = 0.0
 
-    constructor(){
+    constructor(dataObertura: Date, nomCompte: String, saldo: Double){
         this.dataObertura = dataObertura
         this. nomCompte = nomCompte
         this.saldo = saldo
-        this.esCompteNou = esCompteNou
-        this.comissioManteniment = comissioManteniment
     }
 
     fun getDataObertura():Date{
@@ -31,18 +27,11 @@ abstract class CompteBancari {
         this.nomCompte= nomCompte
     }
 
-    fun getSaldo():Double{
+    fun consultarSaldo():Double{
         return this.saldo
     }
     fun setSaldo(saldo:Double){
         this.saldo= saldo
-    }
-
-    fun siEsCompteNou(esCompteNou:Boolean): Double {
-        this.esCompteNou = true
-        if (esCompteNou==true){
-            saldo - 20.00
-        }else return 0.00
     }
 
     fun ingressar(quantitat: Double):Double{
@@ -50,9 +39,5 @@ abstract class CompteBancari {
         println("Indiqui la quantitat a ingressar")
         return saldo + ingres
     }
-    fun retirar(quantitat: Double):Double
-    fun consultarSaldo():Double
-    fun cobrarComissio()
-    override fun toString(): String
 
 }
